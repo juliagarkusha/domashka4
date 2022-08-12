@@ -3,14 +3,8 @@ let sumNumbersArray = 0;
 let sumEvenPositiveNumbers = 0;
 let multiplyPositiveNumbers = 1;
 
-const compareNumeric = (a, b) => {
-    if(a > b) return 1;
-    if(a === b) return 0;
-    if(a < b) return -2
-}
-
-const sortedNumbersArray = initialNumbersArray.sort(compareNumeric);
-let minArrayValue = sortedNumbersArray[0];
+const minArrayValue = Math.min(...initialNumbersArray);
+const maxArrayValue = Math.max(...initialNumbersArray);
 
 const positiveNumbersArray = initialNumbersArray.filter(item => {
     return Math.sign(item) === 1;
@@ -36,22 +30,38 @@ positiveNumbersArray.forEach(item => {
     multiplyPositiveNumbers *= item;
 })
 
-console.log('Сумма положительных значений:', sumNumbersArray, typeof sumNumbersArray)
-console.log('Количество положительных элементов:', positiveNumbersArray.length);
+const customNumbersArray = initialNumbersArray.map(item => {
+    return item !== maxArrayValue ? 0 : maxArrayValue;
+})
 
-console.log('Минимальный элемент массива:', minArrayValue);
-console.log('Порядковый номер минимального элемента массива:', initialNumbersArray.indexOf(-63));
+console.log(
+    'Сумма положительных значений:',
+    sumNumbersArray,
+    'Количество положительных элементов:',
+    positiveNumbersArray.length
+)
 
-console.log('Максимальный элемент массива:', sortedNumbersArray[sortedNumbersArray.length - 1]);
-console.log('Порядковый номер максимального элемента массива:', initialNumbersArray.indexOf(235));
+console.log(
+    'Минимальный элемент массива:',
+    minArrayValue,
+    'его порядковый номер:',
+    initialNumbersArray.indexOf(minArrayValue) + 1
+);
+
+console.log(
+    'Максимальный элемент массива:',
+    maxArrayValue,
+    'его порядковый номер:',
+    initialNumbersArray.indexOf(maxArrayValue) + 1
+);
 
 console.log('Количество отрицательных элементов:', initialNumbersArray.length - positiveNumbersArray.length);
 
-console.log('Количество нечетных положительных элементов', oddPositiveNumbersArray.length);
+console.log('Количество нечетных положительных элементов:', oddPositiveNumbersArray.length);
 console.log('Найти сумму четных положительных элементов', sumEvenPositiveNumbers);
 
 console.log('Произведение положительных элементов:', multiplyPositiveNumbers);
-console.log('Найти самый большой среди элементов массива, остальное обнулить:', initialNumbersArray[sortedNumbersArray.length - 1]);
+console.log('Найти самый большой среди элементов массива, остальное обнулить:', customNumbersArray);
 
 
 
