@@ -35,24 +35,18 @@ const customNumbersArray = initialNumbersArray.map(item => {
 })
 
 console.log(
-    'Сумма положительных значений:',
-    sumNumbersArray,
-    'Количество положительных элементов:',
-    positiveNumbersArray.length
+    'Сумма положительных значений:', sumNumbersArray,
+    'Количество положительных элементов:', positiveNumbersArray.length
 )
 
 console.log(
-    'Минимальный элемент массива:',
-    minArrayValue,
-    'его порядковый номер:',
-    initialNumbersArray.indexOf(minArrayValue) + 1
+    'Минимальный элемент массива:', minArrayValue,
+    'его порядковый номер:', initialNumbersArray.indexOf(minArrayValue) + 1
 );
 
 console.log(
-    'Максимальный элемент массива:',
-    maxArrayValue,
-    'его порядковый номер:',
-    initialNumbersArray.indexOf(maxArrayValue) + 1
+    'Максимальный элемент массива:', maxArrayValue,
+    'его порядковый номер:', initialNumbersArray.indexOf(maxArrayValue) + 1
 );
 
 console.log('Количество отрицательных элементов:', initialNumbersArray.length - positiveNumbersArray.length);
@@ -62,6 +56,3 @@ console.log('Найти сумму четных положительных эл�
 
 console.log('Произведение положительных элементов:', multiplyPositiveNumbers);
 console.log('Найти самый большой среди элементов массива, остальное обнулить:', customNumbersArray);
-
-
-
