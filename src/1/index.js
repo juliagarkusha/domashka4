@@ -1,20 +1,17 @@
 const userArray = [];
 let userPromptValue = +(prompt("Введите значение"));
 
-const compareNumeric = (a, b) => {
-    if(a > b) return 1;
-    if(a === b) return 0;
-    if(a < b) return -2
-}
-
 while (userPromptValue !== null) {
-    if(userPromptValue) userArray.push(+(userPromptValue));
+    if (userPromptValue) {
+        userArray.push(+(userPromptValue))
+    }
+
     userPromptValue = prompt("Введите значение");
 }
 
 console.log('Введенный массив: ', userArray);
 
-console.log('Отсортированный массив: ', userArray.sort(compareNumeric));
+console.log('Отсортированный массив: ', userArray.sort((a, b) => a - b));
 
 const deleteItems = userArray.splice(1, 3);
 
