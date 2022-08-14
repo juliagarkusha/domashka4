@@ -8,8 +8,7 @@ const compareNumeric = (a, b) => {
 }
 
 while (userPromptValue !== null) {
-    !!userPromptValue ? userArray.push(+(userPromptValue)) : '';
-    !!userPromptValue ? console.log('Массив введенных значений: ', userArray) : '';
+    if(userPromptValue) userArray.push(+(userPromptValue));
     userPromptValue = prompt("Введите значение");
 }
 
