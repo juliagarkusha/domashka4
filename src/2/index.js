@@ -1,7 +1,4 @@
 const initialNumbersArray = [16, -37, 54,-4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54, 76, -4, 12, 235, 4, 47, 5];
-let sumNumbersArray = 0;
-let sumEvenPositiveNumbers = 0;
-let multiplyPositiveNumbers = 1;
 
 const minArrayValue = Math.min(...initialNumbersArray);
 const maxArrayValue = Math.max(...initialNumbersArray);
@@ -18,17 +15,17 @@ const evenPositiveNumbersArray = positiveNumbersArray.filter(item => {
     return item % 2 === 0;
 })
 
-positiveNumbersArray.forEach(item => {
-    sumNumbersArray += item;
-})
+const sumNumbersArray = positiveNumbersArray.reduce((acc, item) => {
+    return acc + item;
+}, 0);
 
-evenPositiveNumbersArray.forEach(item => {
-    sumEvenPositiveNumbers += item;
-})
+const sumEvenPositiveNumbers = evenPositiveNumbersArray.reduce((acc, item) => {
+    return acc + item;
+}, 0)
 
-positiveNumbersArray.forEach(item => {
-    multiplyPositiveNumbers *= item;
-})
+const multiplyPositiveNumbers = positiveNumbersArray.reduce((acc, item) => {
+    return acc * item;
+}, 1)
 
 const customNumbersArray = initialNumbersArray.map(item => {
     return item !== maxArrayValue ? 0 : maxArrayValue;
